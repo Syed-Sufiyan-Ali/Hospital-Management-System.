@@ -33,18 +33,29 @@ int main (){
  	cin >> patient[total_patient].id;
  	cout << "Enter illness: ";
  	cin >> patient[total_patient].illness;
+	total_patient++;
  	
  }
  
 
  else  if (user_response == 2){
-    cout << "Enter the number of Days patient has been addmitted";
+    cout << "Enter the number of Days patient has been addmitted for: ";
     cin >> Addmited_For;
  	cout << "Enter patient ID: ";
  	cin >> patient[total_patient].id;
  	cout << "Enter illness: ";
  	cin >> patient[total_patient].illness;
- 	cout << "The Patient " << patient[total_patient].name << endl << "ID: " << patient[total_patient].id << endl << "Addmitted for " << Addmited_For << " days\n ";
+ 	
+	if (total_patient == 0){
+		cout << "No patient has been addmitted yet\n";
+		break;
+	}
+	else {
+		for (int i = 0; i < total_patient; i++){
+			cout << "Patient " << patient[i].name << endl << "ID: " << patient[i].id << endl << "Illness: " << patient[i].illness << endl;
+		}
+	}
+	
  }
 
 else if (user_response == 3){

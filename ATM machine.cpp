@@ -11,7 +11,11 @@ using namespace std;
 while (true){
 
 
+<<<<<<< HEAD
 	cout << "Which account do you want to open press " << endl <<"1 for Savings "<< endl <<"2 for Current ";
+=======
+	cout << "<======================================================================> \nWhich account do you want to open press " << endl <<"1 for Savings "<< endl <<"2 for Current ";
+>>>>>>> 26a06bc764e8263622ceb73f2dc2eeeaaefc809a
 
 	cin >> acc_type ;
     if (acc_type == 0){
@@ -101,4 +105,10 @@ while (true){
     	
  }
  
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 26a06bc764e8263622ceb73f2dc2eeeaaefc809a
 
