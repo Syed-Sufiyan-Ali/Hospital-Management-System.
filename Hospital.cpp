@@ -39,8 +39,6 @@ int main (){
  
 
  else  if (user_response == 2){
-    cout << "Enter the number of Days patient has been addmitted for: ";
-    cin >> Addmited_For;
  	cout << "Enter patient ID: ";
  	cin >> patient[total_patient].id;
  	cout << "Enter illness: ";
@@ -57,6 +55,7 @@ int main (){
 	}
 	
  }
+
 
 else if (user_response == 3){
  	cout << "Enter illness: ";
