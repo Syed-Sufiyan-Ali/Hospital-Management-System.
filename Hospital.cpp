@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include <iostream>
 using namespace std;
 struct Patient {
@@ -77,7 +77,7 @@ else if (user_response == 3){
 total_patient++;
 
 }
-=======
+
 #include <iostream>
 using namespace std;
 struct Patient {
@@ -146,4 +146,4 @@ else if (user_response == 3){
 total_patient++;
 
 }
->>>>>>> 3e267d2b54bf77168b7571a4e9a8b8b2f20669f8
+
