@@ -1,87 +1,158 @@
-<<<<<<< HEAD
-﻿# ATM-using-CPP
+# 🏥 Hospital Management System (C++)
 
-A simple and interactive ATM interface developed using pure C++.
+A console-based Hospital Management System developed in **C++** to manage hospital operations through an interactive menu-driven interface.
 
-## Features
+## 🚀 Features
 
-* User-friendly ATM menu
-* Balance inquiry
-* Cash withdrawal
-* Deposit functionality
-* Simple account interaction system
-* Console-based interface
+### Current Features
 
-## Technologies Used
+* 👨‍⚕️ Patient Management
+* 📝 Add New Patient Records
+* 🔍 Search Patient Records
+* 📋 View Patient Information
+* ✏️ Update Existing Records
+* 💾 File Handling for Data Storage
+* 📊 Menu-Driven User Interface
+* ⚡ Fast Console-Based Navigation
 
-* C++
-* Object-Oriented Programming Concepts
-* Conditional Statements
-* Loops and Functions
-
-## Purpose
-
-This project was created for learning and practicing C++ programming concepts by building a real-world ATM simulation system.
-
-## How to Run
-
-1. Download or clone the repository
-2. Open the project in VS Code or any C++ IDE
-3. Compile the program using a C++ compiler
-4. Run the executable file
-
-## Author
-
-Syed Sufiyan Ali
+> Update this list to match the exact features implemented in your code.
 
 ---
-
-A beginner-friendly C++ project demonstrating basic banking operations through a console application.
-=======
-# 🏥 Hospital Management System (C++ Console Application)
-
-A simple yet functional **Hospital Management System** developed entirely in **C++** using a **console-based interface**. This project is designed to simulate basic hospital operations and management tasks while strengthening core programming concepts such as functions, loops, conditionals, file handling, arrays, structures, and object-oriented programming.
-
-## ✨ Features
-
-🔹 Patient Registration System
-🔹 Doctor Information Management
-🔹 Appointment Handling
-🔹 Patient Record Storage
-🔹 Menu-Driven Console Interface
-🔹 Simple and User-Friendly Navigation
-🔹 Data Management using C++ Concepts
 
 ## 🛠️ Technologies Used
 
-💻 Language: **C++**
-🖥️ Interface: **Console / Terminal Based**
-📚 Concepts Used:
-
-* Functions
-* Loops & Conditionals
-* Structures / Classes
-* Arrays
-* File Handling
+* C++
 * Object-Oriented Programming (OOP)
-
-## 🎯 Project Purpose
-
-This project was created as a learning-based software project to improve problem-solving skills and gain practical experience in building real-world management systems using C++.
-
-## 🚀 Future Improvements
-
-✅ Admin Login System
-✅ Database Integration
-✅ GUI Version
-✅ Advanced Patient Search
-✅ Billing System
-
-## 📌 Note
-
-This is a beginner-to-intermediate level academic project focused on learning software development fundamentals using C++.
+* File Handling
+* Structures / Arrays
+* Console Application
 
 ---
 
-⭐ Feel free to explore, fork, and improve this project!
->>>>>>> 3e267d2b54bf77168b7571a4e9a8b8b2f20669f8
+## 📂 Project Structure
+
+```text
+Hospital-Management-System/
+│
+├── Hospital.cpp
+├── README.md
+```
+
+---
+
+## ▶️ How to Run
+
+### Compile
+
+```bash
+g++ Hospital.cpp -o Hospital
+```
+
+### Run
+
+```bash
+./Hospital
+```
+
+Windows (MinGW):
+
+```bash
+g++ Hospital.cpp -o Hospital.exe
+Hospital.exe
+```
+
+---
+
+## 🎯 Learning Objectives
+
+This project was built to practice:
+
+* C++ Programming
+* Problem Solving
+* Logic Building
+* File Handling
+* Menu Driven Applications
+* Data Management Systems
+
+---
+
+## 🔮 Future Improvements
+
+Planned features for future versions:
+
+### 👨‍⚕️ Doctor Management
+
+* Add doctors
+* Remove doctors
+* Search doctors
+
+### 📅 Appointment System
+
+* Schedule appointments
+* Appointment history
+* Doctor availability tracking
+
+### 💰 Billing System
+
+* Generate invoices
+* Payment tracking
+* Hospital revenue reports
+
+### 🏥 Ward Management
+
+* Room allocation
+* Bed availability
+* Admission tracking
+
+### 🔐 Authentication
+
+* Admin login
+* Staff login
+* Role-based access control
+
+### 📈 Reports & Analytics
+
+* Daily patient reports
+* Monthly statistics
+* Hospital performance dashboard
+
+### 🖥️ GUI Version
+
+* Build a graphical interface using:
+
+  * Qt
+  * Java Swing
+  * C# Windows Forms
+
+### 🌐 Database Integration
+
+* MySQL
+* SQLite
+* PostgreSQL
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of your console application here.
+
+```md
+![Main Menu](screenshots/main-menu.png)
+```
+
+---
+
+## 👨‍💻 Author
+
+**Syed Sufiyan Ali**
+
+* C++ Developer
+* Learning Java & Python
+* Passionate about Software Development
+
+GitHub:
+https://github.com/Syed-Sufiyan-Ali
+
+---
+
+⭐ If you found this project interesting, consider giving it a star!
