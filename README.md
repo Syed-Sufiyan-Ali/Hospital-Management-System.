@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏥 Hospital Management System (C++)
 
 A console-based Hospital Management System developed in **C++** to manage hospital operations through an interactive menu-driven interface.
@@ -156,3 +157,7 @@ https://github.com/Syed-Sufiyan-Ali
 ---
 
 ⭐ If you found this project interesting, consider giving it a star!
+=======
+# Grades-using-JAVA-
+Buidling a simple , grading system using JAVA which I'll be updating with my learning.
+>>>>>>> cfce9d8642c1ce3a79aed5eed6f79ff3ff76b7b2

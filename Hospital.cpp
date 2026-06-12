@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 struct Patient {
@@ -10,71 +11,131 @@ struct Patient {
 };
 
 Patient patient[10];
+int total_patient = 0;
+
+// Load patients from file
+void loadPatients() {
+    ifstream file("patients.txt");
+
+    while (file >> patient[total_patient].name
+                >> patient[total_patient].age
+                >> patient[total_patient].gender
+                >> patient[total_patient].id
+                >> patient[total_patient].illness) {
+
+        total_patient++;
+
+        if (total_patient >= 10)
+            break;
+    }
+
+    file.close();
+}
+
+// Save patients to file
+void savePatients() {
+    ofstream file("patients.txt");
+
+    for (int i = 0; i < total_patient; i++) {
+        file << patient[i].name << " "
+             << patient[i].age << " "
+             << patient[i].gender << " "
+             << patient[i].id << " "
+             << patient[i].illness << endl;
+    }
+
+    file.close();
+}
 
 int main() {
+
+    loadPatients();
+
     int user_response;
-    int total_patient = 0;
     int admitted_for;
 
     while (true) {
-        cout << "===== HOSPITAL MANAGEMENT SYSTEM =====\n\n"
-             << "1. Add Patient\n2. View Patients\n3. Generate Bill\n4. Exit\n";
+
+        cout << "\n===== HOSPITAL MANAGEMENT SYSTEM =====\n";
+        cout << "1. Add Patient\n";
+        cout << "2. View Patients\n";
+        cout << "3. Generate Bill\n";
+        cout << "4. Exit\n";
+
         cin >> user_response;
 
         if (user_response == 1) {
+
+            if (total_patient >= 10) {
+                cout << "Hospital storage is full.\n";
+                continue;
+            }
+
             cout << "Enter patient name: ";
             cin >> patient[total_patient].name;
+
             cout << "Enter patient age: ";
             cin >> patient[total_patient].age;
-            cout << "Enter patient gender (M or F): ";
+
+            cout << "Enter patient gender (M/F): ";
             cin >> patient[total_patient].gender;
+
             cout << "Enter patient ID: ";
             cin >> patient[total_patient].id;
+
             cout << "Enter illness: ";
             cin >> patient[total_patient].illness;
-            total_patient++;
-        }
-        else if (user_response == 2) {
-    if (total_patient == 0) {
-        cout << "No patient has been admitted yet.\n";
-    } else {
-        int search_id;
-        cout << "Enter patient ID: ";
-        cin >> search_id;
 
-        bool found = false;
-        for (int i = 0; i < total_patient; i++) {
-            if (patient[i].id == search_id) {
-                cout << "Patient: " << patient[i].name
-                     << "\nID: " << patient[i].id
-                     << "\nAge: " << patient[i].age
-                     << "\nGender: " << patient[i].gender
-                     << "\nIllness: " << patient[i].illness
-                     << "\n_________________________________________\n";
-                found = true;
-                break;
+            total_patient++;
+
+            savePatients();
+
+            cout << "Patient added successfully.\n";
+        }
+
+        else if (user_response == 2) {
+
+            if (total_patient == 0) {
+                cout << "No patients admitted yet.\n";
+            }
+            else {
+
+                cout << "\n===== PATIENT RECORDS =====\n";
+
+                for (int i = 0; i < total_patient; i++) {
+
+                    cout << "\nPatient #" << i + 1 << endl;
+                    cout << "Name: " << patient[i].name << endl;
+                    cout << "Age: " << patient[i].age << endl;
+                    cout << "Gender: " << patient[i].gender << endl;
+                    cout << "ID: " << patient[i].id << endl;
+                    cout << "Illness: " << patient[i].illness << endl;
+                }
             }
         }
-        if (!found) cout << "No patient found with ID " << search_id << ".\n";
-    }
-}
+
         else if (user_response == 3) {
-            cout << "Enter patient ID: ";
-            int search_id;
-            cin >> search_id;
+
             cout << "Enter number of days admitted: ";
             cin >> admitted_for;
-            cout << "Total bill: Rs." << admitted_for * 1000 << "\n";
+
+            cout << "Total Bill: Rs. "
+                 << admitted_for * 1000
+                 << endl;
         }
+
         else if (user_response == 4) {
-            cout << "You have exited the program. Thank you!\n";
+
+            cout << "Thank you for using the system.\n";
             break;
         }
+
         else {
-            cout << "Invalid response. Please try again.\n";
+
+            cout << "Invalid option.\n";
         }
     }
-	total_patient++;
 
-
+    return 0;
 }
+
