@@ -7,7 +7,7 @@ struct Patient {
     string illness;
     char gender;
     int age;
-    int id;
+    string id;
 };
 
 Patient patient[10];
@@ -56,11 +56,11 @@ int main() {
 
     while (true) {
 
-        cout << "\n===== HOSPITAL MANAGEMENT SYSTEM =====\n";
-        cout << "1. Add Patient\n";
-        cout << "2. View Patients\n";
-        cout << "3. Generate Bill\n";
-        cout << "4. Exit\n";
+       cout << "1. Add Patient\n";
+       cout << "2. View Patients\n";
+       cout << "3. Generate Bill\n";
+       cout << "4. Delete Patient\n";
+       cout << "5. Exit\n";
 
         cin >> user_response;
 
@@ -70,9 +70,9 @@ int main() {
                 cout << "Hospital storage is full.\n";
                 continue;
             }
-
+            cin.ignore();
             cout << "Enter patient name: ";
-            cin >> patient[total_patient].name;
+            getline(cin, patient[total_patient].name);
 
             cout << "Enter patient age: ";
             cin >> patient[total_patient].age;
@@ -124,11 +124,45 @@ int main() {
                  << endl;
         }
 
-        else if (user_response == 4) {
+        else if (user_response == 4)
+{
+    string delete_id;
+    bool found = false;
 
-            cout << "Thank you for using the system.\n";
+    cout << "Enter Patient ID to delete: ";
+    cin >> delete_id;
+
+    for (int i = 0; i < total_patient; i++)
+    {
+        if (patient[i].id == delete_id)
+        {
+            found = true;
+
+            // Shift all patients left
+            for (int j = i; j < total_patient - 1; j++)
+            {
+                patient[j] = patient[j + 1];
+            }
+
+            total_patient--;
+
+            savePatients();
+
+            cout << "Patient deleted successfully.\n";
             break;
         }
+    }
+
+    if (!found)
+    {
+        cout << "Patient not found.\n";
+    }
+}
+else if (user_response == 5)
+{
+    cout << "You have exited the program.\n";
+    break;
+}
 
         else {
 
