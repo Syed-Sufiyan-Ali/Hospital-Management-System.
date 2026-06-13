@@ -1,1 +1,2 @@
-usman 19 M 2 flu
+Syed Ali\ 1 M 001 Flu
+Usman Shah 20 M 002 Fever

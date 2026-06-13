@@ -95,23 +95,82 @@ int main() {
 
         else if (user_response == 2) {
 
-            if (total_patient == 0) {
-                cout << "No patients admitted yet.\n";
-            }
-            else {
+            int search_choice;
 
-                cout << "\n===== PATIENT RECORDS =====\n";
+cout << "\n===== SEARCH PATIENT =====\n";
+cout << "1. Search by Patient ID\n";
+cout << "2. Search by Name + ID\n";
+cout << "Enter Choice: ";
+cin >> search_choice;
 
-                for (int i = 0; i < total_patient; i++) {
+bool found = false;
 
-                    cout << "\nPatient #" << i + 1 << endl;
-                    cout << "Name: " << patient[i].name << endl;
-                    cout << "Age: " << patient[i].age << endl;
-                    cout << "Gender: " << patient[i].gender << endl;
-                    cout << "ID: " << patient[i].id << endl;
-                    cout << "Illness: " << patient[i].illness << endl;
-                }
-            }
+if (search_choice == 1)
+{
+    string search_id;
+
+    cout << "Enter Patient ID: ";
+    cin >> search_id;
+
+    for (int i = 0; i < total_patient; i++)
+    {
+        if (patient[i].id == search_id)
+        {
+            found = true;
+
+            cout << "\n===== PATIENT RECORD =====\n";
+            cout << "Name: " << patient[i].name << endl;
+            cout << "Age: " << patient[i].age << endl;
+            cout << "Gender: " << patient[i].gender << endl;
+            cout << "ID: " << patient[i].id << endl;
+            cout << "Illness: " << patient[i].illness << endl;
+
+            break;
+        }
+    }
+}
+
+else if (search_choice == 2)
+{
+    string search_name;
+    string search_id;
+
+    cin.ignore();
+
+    cout << "Enter Patient Name: ";
+    getline(cin, search_name);
+
+    cout << "Enter Patient ID: ";
+    cin >> search_id;
+
+    for (int i = 0; i < total_patient; i++)
+    {
+        if (patient[i].name == search_name &&
+            patient[i].id == search_id)
+        {
+            found = true;
+
+            cout << "\n===== PATIENT RECORD =====\n";
+            cout << "Name: " << patient[i].name << endl;
+            cout << "Age: " << patient[i].age << endl;
+            cout << "Gender: " << patient[i].gender << endl;
+            cout << "ID: " << patient[i].id << endl;
+            cout << "Illness: " << patient[i].illness << endl;
+
+            break;
+        }
+    }
+}
+
+else
+{
+    cout << "Invalid Search Option.\n";
+}
+
+if (!found)
+{
+    cout << "Patient not found.\n";
+}
         }
 
         else if (user_response == 3) {
@@ -124,7 +183,7 @@ int main() {
                  << endl;
         }
 
-        else if (user_response == 4)
+else if (user_response == 4)
 {
     string delete_id;
     bool found = false;
