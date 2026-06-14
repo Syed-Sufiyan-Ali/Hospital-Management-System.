@@ -17,17 +17,17 @@ int total_patient = 0;
 void loadPatients() {
     ifstream file("patients.txt");
 
-    while (file >> patient[total_patient].name
-                >> patient[total_patient].age
-                >> patient[total_patient].gender
-                >> patient[total_patient].id
-                >> patient[total_patient].illness) {
+   while (file >> patient[total_patient].name
+            >> patient[total_patient].age
+            >> patient[total_patient].gender
+            >> patient[total_patient].id
+            >> patient[total_patient].illness)
+{
+    total_patient++;
 
-        total_patient++;
-
-        if (total_patient >= 10)
-            break;
-    }
+    if (total_patient >= 10)
+        break;
+}
 
     file.close();
 }
@@ -37,11 +37,11 @@ void savePatients() {
     ofstream file("patients.txt");
 
     for (int i = 0; i < total_patient; i++) {
-        file << patient[i].name << " "
-             << patient[i].age << " "
-             << patient[i].gender << " "
-             << patient[i].id << " "
-             << patient[i].illness << endl;
+        file << patient[i].name << "|"
+     << patient[i].age << "|"
+     << patient[i].gender << "|"
+     << patient[i].id << "|"
+     << patient[i].illness << endl;
     }
 
     file.close();
@@ -84,13 +84,31 @@ int main() {
             cin >> patient[total_patient].id;
 
             cout << "Enter illness: ";
-            cin >> patient[total_patient].illness;
+cin >> patient[total_patient].illness;
 
-            total_patient++;
+bool id_exists = false;
 
-            savePatients();
+for (int i = 0; i < total_patient; i++)
+{
+    if (patient[i].id == patient[total_patient].id)
+    {
+        id_exists = true;
+        break;
+    }
+}
 
-            cout << "Patient added successfully.\n";
+if (id_exists)
+{
+    cout << "Patient ID already exists.\n";
+}
+else
+{
+    total_patient++;
+
+    savePatients();
+
+    cout << "Patient added successfully.\n";
+}
         }
 
         else if (user_response == 2) {
@@ -220,7 +238,7 @@ else if (user_response == 4)
 else if (user_response == 5)
 {
     cout << "You have exited the program.\n";
-    break;
+    break; 
 }
 
         else {
@@ -231,4 +249,297 @@ else if (user_response == 5)
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

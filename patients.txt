@@ -1,2 +1,1 @@
-Syed Ali\ 1 M 001 Flu
-Usman Shah 20 M 002 Fever
+Syed Usman shah|20|M|01|fever
