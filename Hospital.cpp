@@ -5,9 +5,10 @@ using namespace std;
 struct Patient {
     string name;
     string illness;
+    string id;
     char gender;
     int age;
-    string id;
+    int days_admitted;
 };
 
 Patient patient[10];
@@ -46,7 +47,17 @@ void savePatients() {
 
     file.close();
 }
+int find_patient(string id){
+    for (int i = 0; i < total_patient; i++)
+{
+    if (patient[i].id == id)
+    {
+        return i;
+    }
+}
 
+return -1;
+}
 int main() {
 
     loadPatients();
@@ -192,7 +203,7 @@ if (!found)
         }
 
         else if (user_response == 3) {
-
+            
             cout << "Enter number of days admitted: ";
             cin >> admitted_for;
 
