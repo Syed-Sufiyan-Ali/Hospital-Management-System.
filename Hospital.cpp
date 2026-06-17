@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 struct Patient {
@@ -17,18 +18,19 @@ int total_patient = 0;
 // Load patients from file
 void loadPatients() {
     ifstream file("patients.txt");
+    string line;
 
-   while (file >> patient[total_patient].name
-            >> patient[total_patient].age
-            >> patient[total_patient].gender
-            >> patient[total_patient].id
-            >> patient[total_patient].illness)
-{
-    total_patient++;
-
-    if (total_patient >= 10)
-        break;
-}
+    while (getline(file, line) && total_patient < 10) {
+        stringstream ss(line);
+        getline(ss, patient[total_patient].name, '|');
+        ss >> patient[total_patient].age;
+        ss.ignore();
+        ss >> patient[total_patient].gender;
+        ss.ignore();
+        getline(ss, patient[total_patient].id, '|');
+        getline(ss, patient[total_patient].illness, '|');
+        total_patient++;
+    }
 
     file.close();
 }
@@ -47,7 +49,7 @@ void savePatients() {
 
     file.close();
 }
-int find_patient(string id){
+int find_patient_for_bill(string id){
     for (int i = 0; i < total_patient; i++)
 {
     if (patient[i].id == id)
@@ -204,12 +206,53 @@ if (!found)
 
         else if (user_response == 3) {
             
-            cout << "Enter number of days admitted: ";
-            cin >> admitted_for;
+          string bill_id;
+int days_admitted;
+int medicine_charges;
+int test_charges;
 
-            cout << "Total Bill: Rs. "
-                 << admitted_for * 1000
-                 << endl;
+cout << "Enter Patient ID: ";
+cin >> bill_id;
+
+int index = find_patient_for_bill(bill_id);
+
+if (index == -1)
+{
+    cout << "Patient not found.\n";
+}
+else
+{
+    cout << "Enter Number of Days Admitted: ";
+    cin >> days_admitted;
+
+    cout << "Enter Medicine Charges: ";
+    cin >> medicine_charges;
+
+    cout << "Enter Lab/Test Charges: ";
+    cin >> test_charges;
+
+    int room_charges = days_admitted * 1000;
+    int doctor_fee = 500;
+
+    int total_bill = room_charges
+                   + doctor_fee
+                   + medicine_charges
+                   + test_charges;
+
+    cout << "\n========== HOSPITAL BILL ==========\n";
+    cout << "Patient Name     : " << patient[index].name << endl;
+    cout << "Patient ID       : " << patient[index].id << endl;
+    cout << "Illness          : " << patient[index].illness << endl;
+    cout << "-----------------------------------\n";
+    cout << "Room Charges     : Rs. " << room_charges << endl;
+    cout << "Doctor Fee       : Rs. " << doctor_fee << endl;
+    cout << "Medicine Charges : Rs. " << medicine_charges << endl;
+    cout << "Lab/Test Charges : Rs. " << test_charges << endl;
+    cout << "-----------------------------------\n";
+    cout << "Total Bill       : Rs. " << total_bill << endl;
+    cout << "===================================\n";
+}
+
         }
 
 else if (user_response == 4)
