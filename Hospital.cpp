@@ -239,7 +239,7 @@ else
                    + medicine_charges
                    + test_charges;
 
-    cout << "\n========== HOSPITAL BILL ==========\n";
+    cout << "\n========== Sufiyan Health Clinic ==========\n";
     cout << "Patient Name     : " << patient[index].name << endl;
     cout << "Patient ID       : " << patient[index].id << endl;
     cout << "Illness          : " << patient[index].illness << endl;
