@@ -243,7 +243,7 @@ else
     cout << "Patient Name     : " << patient[index].name << endl;
     cout << "Patient ID       : " << patient[index].id << endl;
     cout << "Illness          : " << patient[index].illness << endl;
-    cout << "-----------------------------------\n";
+    cout << "----------------------h-------------\n";
     cout << "Room Charges     : Rs. " << room_charges << endl;
     cout << "Doctor Fee       : Rs. " << doctor_fee << endl;
     cout << "Medicine Charges : Rs. " << medicine_charges << endl;
