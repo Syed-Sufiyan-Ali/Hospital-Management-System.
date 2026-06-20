@@ -60,8 +60,22 @@ int find_patient_for_bill(string id){
 
 return -1;
 }
-int main() {
 
+int main() {
+string username , password ;
+while(true){
+cout << "enter username: " ;
+cin >> username;
+cout << "enter password: " ;
+cin >> password;
+if (username == "hms_sufiyan" && password == "sufiyan123") {
+    cout << "Login Successful.\nWelcome to Sufiyan Health Clinic Management System.\n";
+    break;
+}
+else{
+    cout << "Login Failed Try again. \n";
+}
+}
     loadPatients();
 
     int user_response;
