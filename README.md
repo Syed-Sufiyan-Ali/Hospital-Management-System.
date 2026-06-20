@@ -140,7 +140,7 @@ Planned features for future versions:
 Add screenshots of your console application here.
 
 ```md
-![Main Menu](screenshots/main-menu.png)
+![Add Patient](screenshots/Screenshot (27).png)
 ```
 
 ---
