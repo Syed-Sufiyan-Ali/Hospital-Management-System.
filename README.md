@@ -23,6 +23,7 @@ A console-based Hospital Management System developed in **C++** to manage hospit
 ## 🛠️ Technologies Used
 
 * C++
+* JAVA Swing for the GUI version
 * Object-Oriented Programming (OOP)
 * File Handling
 * Structures / Arrays
@@ -74,6 +75,7 @@ This project was built to practice:
 * File Handling
 * Menu Driven Applications
 * Data Management Systems
+* JAVA Swing GUI
 
 ---
 
@@ -117,13 +119,13 @@ Planned features for future versions:
 * Monthly statistics
 * Hospital performance dashboard
 
-### 🖥️ GUI Version
+### 🖥️ Improvements in GUI Version
 
-* Build a graphical interface using:
 
-  * Qt
+* A GUI version has been releases using:
   * Java Swing
-  * C# Windows Forms
+* It will be improved and enhanced overtime.    
+ 
 
 ### 🌐 Database Integration
 
@@ -138,7 +140,7 @@ Planned features for future versions:
 Add screenshots of your console application here.
 
 ```md
-![Main Menu](screenshots/main-menu.png)
+![Add Patient](screenshots/Screenshot (27).png)
 ```
 
 ---
