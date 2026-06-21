@@ -1,2 +1,4 @@
 Syed Sufiyan Ali|18|M|01|Flu
-NIms Baloch|100|F|02|Flu
+Shahbaz ALi|19|M|02|Cancer
+Aslam|54|M|03|Thyroid
+Hadia|34|M|04|Fractured Legs
