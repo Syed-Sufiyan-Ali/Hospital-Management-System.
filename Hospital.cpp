@@ -62,16 +62,19 @@ return -1;
 }
 
 int main() {
-string username , password ;
+string username , password;
 while(true){
-cout << "enter username: " ;
+cout << "Enter username: " ;
 cin >> username;
-cout << "enter password: " ;
+cout << "Enter password: " ;
 cin >> password;
+
 if (username == "hms_sufiyan" && password == "sufiyan123") {
     cout << "Login Successful.\nWelcome to Sufiyan Health Clinic Management System.\n";
     break;
 }
+
+
 else{
     cout << "Login Failed Try again. \n";
 }
