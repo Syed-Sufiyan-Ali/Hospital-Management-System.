@@ -87,7 +87,7 @@ else{
     while (true) {
 
        cout << "1. Add Patient\n";
-       cout << "2. View Patients\n";
+       cout << "2. Search Patients\n";
        cout << "3. Generate Bill\n";
        cout << "4. Delete Patient\n";
        cout << "5. Exit\n";
