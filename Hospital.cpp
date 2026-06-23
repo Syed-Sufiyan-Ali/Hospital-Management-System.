@@ -88,9 +88,10 @@ else{
 
        cout << "1. Add Patient\n";
        cout << "2. Search Patients\n";
-       cout << "3. Generate Bill\n";
-       cout << "4. Delete Patient\n";
-       cout << "5. Exit\n";
+       cout << "3. View All Patients\n";
+       cout << "4. Generate Bill\n";
+       cout << "5. Delete Patient\n";
+       cout << "6. Exit\n";
 
         cin >> user_response;
 
@@ -113,8 +114,9 @@ else{
             cout << "Enter patient ID: ";
             cin >> patient[total_patient].id;
 
+            cin.ignore();
             cout << "Enter illness: ";
-cin >> patient[total_patient].illness;
+            getline(cin, patient[total_patient].illness);       
 
 bool id_exists = false;
 
@@ -220,8 +222,29 @@ if (!found)
     cout << "Patient not found.\n";
 }
         }
+else if (user_response == 3)
+{
+    if (total_patient == 0)
+    {
+        cout << "No patients found.\n";
+    }
+    else
+    {
+        cout << "\n===== ALL PATIENT RECORDS =====\n";
 
-        else if (user_response == 3) {
+        for (int i = 0; i < total_patient; i++)
+        {
+            cout << "\nPatient #" << i + 1 << endl;
+            cout << "Name    : " << patient[i].name << endl;
+            cout << "Age     : " << patient[i].age << endl;
+            cout << "Gender  : " << patient[i].gender << endl;
+            cout << "ID      : " << patient[i].id << endl;
+            cout << "Illness : " << patient[i].illness << endl;
+            cout << "-----------------------------\n";
+        }
+    }
+}
+        else if (user_response == 4) {
             
           string bill_id;
 int days_admitted;
@@ -272,7 +295,7 @@ else
 
         }
 
-else if (user_response == 4)
+else if (user_response == 5)
 {
     string delete_id;
     bool found = false;
@@ -306,7 +329,7 @@ else if (user_response == 4)
         cout << "Patient not found.\n";
     }
 }
-else if (user_response == 5)
+else if (user_response == 6)
 {
     cout << "You have exited the program.\n";
     break; 
