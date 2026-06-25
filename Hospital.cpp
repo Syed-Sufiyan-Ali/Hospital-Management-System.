@@ -69,7 +69,7 @@ cin >> username;
 cout << "Enter password: " ;
 cin >> password;
 
-if (username == "hmssofiyan" && password == "sufiyan123") {
+if (username == "hms_sufiyan" && password == "sufiyan123") {
     cout << "Login Successful.\nWelcome to Sufiyan Health Clinic Management System.\n";
     break;
 }
