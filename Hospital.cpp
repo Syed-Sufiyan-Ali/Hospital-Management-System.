@@ -1,6 +1,8 @@
 #include <iostream>
+#include "login.h"
 #include <fstream>
 #include <sstream>
+
 using namespace std;
 
 struct Patient {
@@ -62,14 +64,16 @@ return -1;
 }
 
 int main() {
-string username , password;
-while(true){
-cout << "Enter username: " ;
-cin >> username;
-cout << "Enter password: " ;
-cin >> password;
+    string username , password;
+    Login login;
 
-if (username == "hms_sufiyan" && password == "sufiyan123") {
+    while(true){
+        cout << "Enter username: " ;
+        cin >> username;
+        cout << "Enter password: " ;
+        cin >> password;
+
+if (login.authenticate(username, password)) {
     cout << "Login Successful.\nWelcome to Sufiyan Health Clinic Management System.\n";
     break;
 }
